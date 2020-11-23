@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import detail, room_detail, rooms_list 
+from . import views
 
 urlpatterns = [
-    path('<int:id>', detail, name='detail'),
-    path('room/<int:id>', room_detail, name='room_detail'),
-    path('roomslist', rooms_list, name='rooms_list'),
+    path('<int:id>', views.detail, name='detail'),
+    path('room/<int:id>', views.room_detail, name='room_detail'),
+    path('roomslist', views.rooms_list, name='rooms_list'),
+    path('newForm', views.new, name="new")
 ]
